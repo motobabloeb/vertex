@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ru" style="--tg-viewport-height: 100vh; --tg-viewport-stable-height: 100vh;">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gaming portal</title>
+  <link rel="stylesheet" href="/static/styles.css"> <!-- Подключение CSS -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"> <!-- Подключение шрифта Roboto -->
+</head>
+<body>
+  <header>
+    <img src="./static/logo.png" alt="Logo">
+    <span>GURUHACK</span>
+  </header>
+
+  <!-- Содержимое страниц -->
+
+  <div id="About" class="tabcontent" style="display: none;">
+    <img id="aboutGif" src="./static/welcome.gif" alt="Описание GIF" class="about-gif">
+    <div class="about-text">
+      <h2>GURUHACK</h2>
+      <span class="typing-text" style="opacity: 0.5;"></span>
+      <button onclick="window.location.href='https://t.me/minesguruhack';" class="about-button">
+        Go to Telegram
+      </button>
+    </div>
+  </div>
+  
+  <div id="Contact" class="tabcontent" style="display: none;">
+    <div class="image-container">
+      <h2 class="title">GAME PICKER</h2>
+      <img src="./static/secret.png" alt="Secret Image">
+    </div>
+    <p id="device-output" class="device-info">The device is not identified</p>
+    <button onclick="detectDevice()" class="detect-button">
+      Identify the device
+    </button>
+    <button onclick="startGame()" class="start-button">Start</button>
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <button class="close-button" onclick="closeModal()">×</button>
+        <h2 style="text-align: center">Instructions</h2>
+        <div class="carousel">
+          <div class="slides" style="width: 200%; transition: transform 0.5s; transform: translateX(0%);">
+            <div class="slide" style="width: 50%; float: left">
+              <img src="./static/inst1.jpg" alt="Инструкция 1">
+            </div>
+            <div class="slide" style="width: 50%; float: left">
+              <img src="./static/inst2.jpg" alt="Инструкция 2">
+            </div>
+          </div>
+          <a class="prev" onclick="plusSlides(-1)">❮</a>
+          <a class="next" onclick="plusSlides(1)">❯</a>
+          <div class="dots-container">
+            <span class="dot active" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="miniModal" class="modal-mini">
+      <div class="modal-content-mini">
+        <button class="close-button-mini" onclick="closeMiniModal()">
+          ×
+        </button>
+      </div>
+    </div>
+  </div>
+  
+  <div id="Games" class="tabcontent active" style="display: block;">
+    <div class="row">
+      <div class="game">
+        <img src="./static/1.png" alt="Mines Preview">
+        <div class="game-info">
+          <h3>Mines (Spribe)</h3>
+          <a href="https://minesguruhack.github.io/GuruHack/spribe/">
+            <button>Open</button>
+          </a>
+        </div>
+      </div>
+      <div class="game">
+        <img src="./static/3.png" alt="Mines Preview">
+        <div class="game-info">
+          <h3>Mines (1win)</h3>
+          <a href="https://minesguruhack.github.io/GuruHack/mines1w/">
+            <button>Open</button>
+          </a>
+        </div>
+      </div>
+      <div class="game">
+        <img src="./static/4.png" alt="Mines Preview">
+        <div class="game-info">
+          <h3>Royal Mines</h3>
+          <a href="https://minesguruhack.github.io/GuruHack/royalmines/">
+            <button>Open</button>
+          </a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="game">
+        <img src="./static/6.png" alt="Mines Preview">
+        <div class="game-info">
+          <h3>Bombucks</h3>
+          <a href="https://minesguruhack.github.io/GuruHack/bombnew/">
+            <button>Open</button>
+          </a>
+        </div>
+      </div>
+      <div class="game">
+        <img src="./static/5.png" alt="Mines Preview">
+        <div class="game-info">
+          <h3>Goal (Spribe)</h3>
+          <a href="https://minesguruhack.github.io/GuruHack/goalspribe/">
+            <button>Open</button>
+          </a>
+        </div>
+      </div>
+      <div class="game">
+        <img src="./static/2.png" alt="Mines Preview">
+        <div class="game-info">
+          <h3>Mines (Turbo)</h3>
+          <a href="https://minesguruhack.github.io/GuruHack/turbomines/">
+            <button>Open</button>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tab">
+    <button class="tablinks about-icon icon" data-tab="About" onclick="openTab(event, 'About', this)">
+      <img src="./static/tg.png" alt="О нас">
+    </button>
+    <button class="tablinks games-icon icon active" data-tab="Games" onclick="openTab(event, 'Games', this)">
+      <img src="./static/game.png" alt="Игры">
+    </button>
+    <button class="tablinks contact-icon icon" data-tab="Contact" onclick="openTab(event, 'Contact', this)">
+      <img src="./static/money.png" alt="Контакты">
+    </button>
+  </div>
+
+  <canvas id="particleCanvas" width="768" height="1024"></canvas>
+  <audio id="aboutAudio" src="/static/gif.mp3"></audio>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <script src="/static/scripts.js"></script> <!-- Подключение JavaScript -->
+</body>
+</html>

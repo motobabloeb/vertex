@@ -1,0 +1,42 @@
+/* Основные стили */
+@font-face { 
+  font-family: 'Intro'; 
+  src: url('static/intro.otf') format('opentype'); 
+}
+body { 
+  background: linear-gradient(135deg, #73a5ff, #5477f5); /* Голубой фон */
+  background-size: cover;
+  color: #fff;
+  font-family: 'Roboto', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  padding-top: 60px;
+  padding-bottom: 50px;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  scroll-behavior: smooth;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  width: 100%;
+  padding: 10px 20px;
+  background-color: #5477f5; /* Темно-голубой цвет */
+  color: #fff;
+  display: flex;
+  align-items: center;
+  font-family: 'Roboto', Arial, sans-serif;
+  box-sizing: border-box;
+  font-size: 24px;
+}
+
+.tab {
+  position: fixed;
+  bottom: 0;
+ [A](https://github.com/lali1998/Carseller/tree/083353ff5e842ae70ad7ddda81ae5560af5e67b3/cars%2Fuj-autok%2Flogin%2Fstartpage.php?copilot_analytics_metadata=eyJldmVudEluZm9fY29udmVyc2F0aW9uSWQiOiJCaEtvTlhuRXpuc3RkTXJDQ0tOOWMiLCJldmVudEluZm9fY2xpY2tTb3VyY2UiOiJjaXRhdGlvbkxpbmsiLCJldmVudEluZm9fY2xpY2tEZXN0aW5hdGlvbiI6Imh0dHBzOlwvXC9naXRodWIuY29tXC9sYWxpMTk5OFwvQ2Fyc2VsbGVyXC90cmVlXC8wODMzNTNmZjVlODQyYWU3MGFkN2RkZGE4MWFlNTU2MGFmNWU2N2IzXC9jYXJzJTJGdWotYXV0b2slMkZsb2dpbiUyRnN0YXJ0cGFnZS5waHAiLCJldmVudEluZm9fbWVzc2FnZUlkIjoiMW0ySjFIQm9QNFBHRnVLclhaYWZuIn0%3D&citationMarker=9F742443-6C92-4C44-BF58-8F5A7C53B6F1)
